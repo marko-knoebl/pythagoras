@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=width, height=height, initial-scale=1">
+  <title>Pythagoras</title>
+
+  <!--material CSS-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+  <!--material icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- angular, angular material js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!--controllers-->
+  <script src="controllers.js"></script>
+</head>
+<body ng-app="pythagorasApp" id="main">
+<div ng-controller="PythagorasCtrl as pythagorasCtrl">
+
+  <div layout="column" layout-align="center center" style="margin: 10px">
+    <md-card layout-align="center" class="md-whiteframe-4dp" style="margin:20px; padding:20px">
+      <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Satz des Pythagoras: Übungen</span>
+          </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>Gegeben sind zwei Seiten eines rechtwinkligen Dreiecks. Berechne die dritte!</p>
+        <p style="font-size:17px">a = {{a}}, b = {{b}}, c = {{c}}</p>
+        <md-input-container style="padding-bottom:0px">
+          <label style="font-size:17px">{{unknown}}</label>
+          <input ng-model="answer"></input>
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary md-raised" ng-click="checkAnswer()">Überprüfen</md-button>
+      </md-card-actions>
+    </md-card>
+    <md-card layout="row" layout-align="center" class="md-whiteframe-4dp" style="padding:10px; font-size:30px">
+      Richtig: {{correct}}/{{correct+wrong}}
+    </md-whiteframe>
+  </div>
+
+
+
+</div>
+
+  <script>
+
+    // update on Enter keypress
+    $('#symbolInput').on('keypress', function(event) {
+      if (event.key === 'Enter') {
+        $('#symbolInput').trigger('blur');
+      }
+    });
+
+  </script>
+
+</body>
+</html>
