@@ -22,33 +22,28 @@
   <script src="controllers.js"></script>
 </head>
 <body ng-app="pythagorasApp" id="main">
-<div ng-controller="PythagorasCtrl as pythagorasCtrl">
+<div ng-controller="PythagorasCtrl as pythagorasCtrl" style="background-color:#eeeeee; height:100%">
 
-  <div layout="column" layout-align="center center" style="margin: 10px">
-    <md-card layout-align="center" class="md-whiteframe-4dp" style="margin:20px; padding:20px">
-      <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Satz des Pythagoras: Übungen</span>
-          </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        <p>Gegeben sind zwei Seiten eines rechtwinkligen Dreiecks. Berechne die dritte!</p>
-        <p style="font-size:17px">a = {{a}} cm, b = {{b}} cm, c = {{c}} cm</p>
-        <md-input-container style="padding-bottom:0px">
-          <label style="font-size:17px">{{unknown}}</label>
-          <input ng-model="answer"></input>
-        </md-input-container>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-primary md-raised" ng-click="checkAnswer()">Überprüfen</md-button>
-      </md-card-actions>
-    </md-card>
-    <md-card layout="row" layout-align="center" class="md-whiteframe-4dp" style="padding:10px; font-size:30px">
-      Richtig: {{correct}}/{{correct+wrong}}
-    </md-whiteframe>
+  <div layout="column" layout-align="center center">
+    <!--header bar-->
+    <div layout="column" class="md-whiteframe-z2" layout-align="center center" style="background-color:#ffca28; width:100%; color:#424242">
+      <div><p><span style="font-size:34px; line-height:40px">Satz des Pythagoras: Übungen</span></p>
+      <p>Gegeben sind zwei Seiten eines rechtwinkligen Dreiecks. Berechne die dritte!</p></div>
+    </div>
+    <div layout="column">
+      <p style="font-size:16px; margin-left=2px">a = {{a}} cm, b = {{b}} cm, c = {{c}} cm</p>
+      <md-input-container >
+        <label style="font-size:16px">{{unknown}}</label>
+        <input ng-model="answer"></input>
+      </md-input-container>
+      <md-button class="md-primary md-raised" ng-click="checkAnswer()">Überprüfen</md-button>
+        <div layout="column" layout-align="center center">
+          <md-card layout="row" layout-align="center" class="md-whiteframe-4dp" style="padding:10px; font-size:30px">
+            Richtig: {{correct}}/{{correct+wrong}}
+          </md-whiteframe>
+        </div>
+    </div>
   </div>
-
-
 
 </div>
 
