@@ -22,17 +22,16 @@
   <script src="controllers.js"></script>
 </head>
 <body ng-app="pythagorasApp" id="main">
-<div ng-controller="PythagorasCtrl as pythagorasCtrl" style="background-color:#eeeeee; min-height:100%">
 
-  <div layout="column" layout-align="start center" style="height:100%">
+  <div ng-controller="PythagorasCtrl as pythagorasCtrl" layout="column" layout-align="start center" style="display:flex; flex-direction:column; background-color:#eeeeee; height:100%">
     <!--header bar-->
     <div layout="column" class="md-whiteframe-z2" layout-align="center center"
         style="background-color:#ffca28; width:100%; color:#424242; padding: 16px">
       <div><p><span style="font-size:34px; line-height:40px">Satz des Pythagoras: Übungen</span></p>
       <p>Gegeben sind zwei Seiten eines rechtwinkligen Dreiecks. Berechne die dritte!</p></div>
     </div>
-    <div layout="column" style="margin-top: 32px">
-      <p style="font-size:24px; margin-left=2px">a = {{a}} cm, b = {{b}} cm, c = {{c}} cm</p>
+    <div layout="column" style="margin-top: 32px; flex-grow:1">
+      <div style="font-size:24px; padding-left:6px">a = {{a}} cm, b = {{b}} cm, c = {{c}} cm</div>
       <md-input-container>
         <label style="font-size:24px; color:#bdbdbd">{{unknown}}</label>
         <input style="font-size:24px" ng-model="answer"></input>
@@ -45,8 +44,6 @@
         </div>
     </div>
   </div>
-
-</div>
 
   <script>
 
