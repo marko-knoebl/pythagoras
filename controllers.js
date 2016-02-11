@@ -5,11 +5,14 @@ var pythagorasApp = angular.module('pythagorasApp', ['ngMaterial', 'ngMessages']
 pythagorasApp.controller('PythagorasCtrl', function($scope, $http) {
   // default date range: 1 month
 
-  $scope.correct = 0;
-  $scope.wrong = 0;
-
   var randint = function(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  $scope.restart = function() {
+    newQuestion();
+    $scope.correct = 0;
+    $scope.wrong = 0;
   };
 
   var newQuestion = function() {
@@ -31,7 +34,7 @@ pythagorasApp.controller('PythagorasCtrl', function($scope, $http) {
     return lengths;
   }
 
-  newQuestion();
+  $scope.restart();
 
   $scope.checkAnswer = function() {
     var answer = parseInt($scope.answer);

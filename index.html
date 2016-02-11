@@ -37,11 +37,12 @@
         <input style="font-size:24px" ng-model="answer"></input>
       </md-input-container>
       <md-button class="md-primary md-raised" ng-click="checkAnswer()">Überprüfen</md-button>
-        <div layout="column" layout-align="center center">
-          <div layout="row" layout-align="center" style="padding:10px; font-size:24px">
-            Richtig: {{correct}}/{{correct+wrong}}
-          </div>
+      <div layout="column" layout-align="center center">
+        <div layout="row" layout-align="center" style="padding-top:16px; font-size:24px">
+          Richtig: {{correct}}/{{correct+wrong}}
         </div>
+      </div>
+      <md-button ng-click="restart()">Neustart</md-button>
     </div>
   </div>
 
