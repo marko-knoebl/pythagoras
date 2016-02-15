@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=width, height=height, initial-scale=1">
+  <title>Pythagoras</title>
+
+  <!--material CSS-->
+  <link rel="stylesheet" href="libs/angular-material.min.css">
+  <!--material icons -->
+  <link rel="stylesheet" href="icon?family=Material+Icons">
+
+  <!-- angular, angular material js-->
+  <script src="libs/angular.js"></script>
+  <script src="libs/angular-animate.min.js"></script>
+  <script src="libs/angular-aria.min.js"></script>
+  <script src="libs/angular-messages.min.js"></script>
+  <script src="libs/angular-material.min.js"></script>
+  <!--jQuery-->
+  <script src="libs/jquery.min.js"></script>
+  <!--controllers-->
+  <script src="controllers.js"></script>
+</head>
+<body ng-app="pythagorasApp" id="main">
+
+  <div ng-controller="PythagorasCtrl as pythagorasCtrl" layout="column" layout-align="start center" style="display:flex; flex-direction:column; background-color:#eeeeee; height:100%">
+    <!--header bar-->
+    <div layout="column" class="md-whiteframe-z2" layout-align="center center"
+        style="background-color:#ffca28; width:100%; color:#424242; padding: 16px">
+      <div><p><span style="font-size:34px; line-height:40px">Satz des Pythagoras: Übungen</span></p>
+      <p>Gegeben sind zwei Seiten eines rechtwinkligen Dreiecks. Berechne die dritte!</p></div>
+    </div>
+    <div layout="column" style="margin-top: 32px; flex-grow:1">
+      <div style="font-size:24px; padding-left:6px">a = {{a}} cm, b = {{b}} cm, c = {{c}} cm</div>
+      <md-input-container>
+        <label style="font-size:24px; color:#bdbdbd">{{unknown}}</label>
+        <input style="font-size:24px" ng-model="answer"></input>
+      </md-input-container>
+      <md-button class="md-primary md-raised" ng-click="checkAnswer()">Überprüfen</md-button>
+      <div layout="column" layout-align="center center">
+        <div layout="row" layout-align="center" style="padding-top:16px; font-size:24px">
+          Richtig: {{correct}}/{{correct+wrong}}
+        </div>
+      </div>
+      <md-button ng-click="restart()">Neustart</md-button>
+    </div>
+
+</body>
+</html>
