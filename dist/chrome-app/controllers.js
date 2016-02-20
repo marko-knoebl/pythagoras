@@ -1,13 +1,5 @@
 'use strict';
 
-
-    // update on Enter keypress
-    $('#symbolInput').on('keypress', function(event) {
-      if (event.key === 'Enter') {
-        $('#symbolInput').trigger('blur');
-      }
-    });
-
 var pythagorasApp = angular.module('pythagorasApp', ['ngMaterial', 'ngMessages']);
 
 pythagorasApp.controller('PythagorasCtrl', function($scope, $http) {
