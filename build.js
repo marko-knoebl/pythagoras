@@ -8,6 +8,7 @@ var buildChromeApp = function() {
   fs.copySync('controllers.js', 'dist/chrome-app/controllers.js');
   fs.copySync('index.html', 'dist/chrome-app/index.html');
   fs.copySync('chrome-app-assets', 'dist/chrome-app');
+  fs.copySync('icons', 'dist/chrome-app');
   fs.copySync('libs', 'dist/chrome-app/libs');
   fs.copySync('src-chrome', 'dist/chrome-app');
 
